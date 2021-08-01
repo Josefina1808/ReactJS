@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { NavBar } from './components/NavBar/navBar';
 
 ReactDOM.render(
-  <div>SunWater - Shop online</div>,
+  <div>
+    <NavBar/>
+  </div>,
   document.getElementById('root')
 );
 
