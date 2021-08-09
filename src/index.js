@@ -1,18 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { NavBar } from './components/NavBar/navBar';
-import {ItemListContainer} from './components/Main/ItemListContainer'
-
-const text = {
-  greeting: "Bienvenido a la tienda online de SunWater"
-}
+import React from "react";
+import ReactDOM from "react-dom";
+import {App} from "./App"
 
 ReactDOM.render(
-  <div>
-    <NavBar/>
-    <ItemListContainer greeting={text.greeting}/>
-  </div>,
-  document.getElementById('root')
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
-
-
