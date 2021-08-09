@@ -5,13 +5,12 @@ export const ItemCount = ({stock}) => {
     const [counter, setCounter ] = useState(1);
 
     const onAdd = () => {
-        setCounter(counter + 1)
         //Este condicional está comentado pq no funciona, nunca suma; porque "nunca" se cumple la condición
-        /* if (counter < Number({stock})) {
+        if (counter < stock) {
             setCounter(counter + 1)
         } else {
             console.log('Stock insuficiente')
-        } */
+        }
     }
 
     const onDecrease = () => {
