@@ -44,6 +44,27 @@
   padding: 0rem 0rem 0.25rem 0rem;
 }
 
+.productos .card__product .card__product--img {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.productos .card__product .card__product--img img {
+    height: 14rem;
+    width: 14rem;
+    border-radius: 6px; }
+.productos .card__product .card__product--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0.5rem; }
+
+.productos .card__product .card__product--cta .price {
+    color: #012e67;
+    font-size: 1.5rem;
+    text-align: center; }
+
 .card__product--btn_qty {
   display: flex;
   justify-content: space-evenly;
