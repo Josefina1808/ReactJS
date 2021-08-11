@@ -8,16 +8,12 @@ export const ItemCount = ({ stock }) => {
     //Este condicional está comentado pq no funciona, nunca suma; porque "nunca" se cumple la condición
     if (counter < stock) {
       setCounter(counter + 1);
-    } else {
-      console.log("Stock insuficiente");
     }
   };
 
   const onDecrease = () => {
     if (counter > 0) {
       setCounter(counter - 1);
-    } else {
-      console.log("No se puede restar");
     }
   };
 

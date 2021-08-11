@@ -1,7 +1,7 @@
 import React from "react";
 import { NavBar } from "./components/NavBar/navBar";
 import { ItemListContainer } from "./components/Main/ItemListContainer";
-import { ItemCount } from "./components/Main/ItemCount"
+import { ItemList } from "./components/Main/ItemList"
 
 const greeting = {
   greeting: "Bienvenido a la tienda online de SunWater",
@@ -16,7 +16,7 @@ export const App = () => {
     <div>
       <NavBar />
       <ItemListContainer greeting={greeting.greeting} />
-      <ItemCount stock={stock.stock}/>
+      <ItemList id='12' title="Botella Metatrón" description="Botella azul para solarizar" price="890" stock="5"/>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import "./main.css";
 import { ItemCount } from "./ItemCount";
 
-export const Item = ({ id, title, description, price, image }) => {
+function Item ({ id, title, description, price, image, stock }) {
   return (
     <div className="card__product" id={id}>
       <div className="card_product--title_principal">
@@ -13,9 +13,10 @@ export const Item = ({ id, title, description, price, image }) => {
         <img src={image}/>
       </div>
       <div className="card__product--cta">
-        <div className="price">{price}</div>
-        <ItemCount />
+        <div className="price">${price}</div>
+        <ItemCount stock={stock}/>
       </div>
     </div>
-  );
-};
+  )
+}
+export default Item;
