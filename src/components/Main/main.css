@@ -9,21 +9,6 @@
   margin: 0;
 }
 
-/* CARROUSEL */
-.carousel-control-prev,
-.carousel-control-next,
-.carousel-indicators {
-  display: none;
-}
-
-.carousel-caption p {
-  font-size: 1.5rem;
-}
-
-.carousel-caption h3 {
-  font-size: 3rem;
-}
-
 /* CARD de PRODUCTS */
 .card__product {
   margin: 0.5rem 1rem 1rem 1rem;
@@ -196,3 +181,164 @@
   display: flex;
   margin: 0 auto;
 }
+
+/* HOME */
+.solarizar {
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 1/13;
+  grid-row: 1 / 4; }
+  .solarizar .solarizar__content {
+    display: flex;
+    justify-content: space-between; }
+    .solarizar .solarizar__content .solarizar__content--text {
+      height: min-content;
+      text-align: justify; }
+      .solarizar .solarizar__content .solarizar__content--text a {
+        color: #37afca; }
+      .solarizar .solarizar__content .solarizar__content--text a:hover {
+        text-decoration: underline; }
+    .solarizar .solarizar__content .solarizar__content--img {
+      background-image: url(../../img/4.jpg);
+      background-size: cover;
+      background-position: bottom right;
+      background-repeat: no-repeat; }
+  @media (max-width: 992px) {
+    .solarizar .solarizar__content {
+      flex-direction: column; }
+      .solarizar .solarizar__content .solarizar__content--img {
+        height: 30rem; } }
+  @media (min-width: 992px) {
+    .solarizar .solarizar__content {
+      flex-direction: row; }
+      .solarizar .solarizar__content .solarizar__content--text {
+        width: 50%; }
+      .solarizar .solarizar__content .solarizar__content--img {
+        width: 50%;
+        margin-left: 2rem; } }
+
+.codificar {
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: 1/13;
+  grid-row: 4 / 13; }
+  .codificar .codificar__content {
+    display: flex;
+    justify-content: space-between; }
+    .codificar .codificar__content .codificar__content--text {
+      height: min-content;
+      text-align: justify;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin: 0; }
+      .codificar .codificar__content .codificar__content--text p {
+        margin-bottom: 0rem; }
+      .codificar .codificar__content .codificar__content--text li {
+        padding: 0.5rem 0rem;
+        font-size: 1.4rem; }
+        .codificar .codificar__content .codificar__content--text li a {
+          color: #37afca;
+          font-weight: 500; }
+    .codificar .codificar__content .codificar__content--img {
+      background-image: url(../../img/7.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
+  @media (max-width: 992px) {
+    .codificar .codificar__content {
+      flex-direction: column; }
+      .codificar .codificar__content .codificar__content--img {
+        display: none; } }
+  @media (min-width: 992px) {
+    .codificar .codificar__content .codificar__content--text {
+      width: 50%; }
+    .codificar .codificar__content .codificar__content--img {
+      width: 50%;
+      margin-left: 2rem; } }
+
+.geometria {
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .geometria .geometria__content {
+    display: flex;
+    justify-content: space-around; }
+    @media (min-width: 992px) {
+      .geometria .geometria__content {
+        flex-direction: row; } }
+    @media (max-width: 992px) {
+      .geometria .geometria__content {
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center; } }
+    .geometria .geometria__content .geometria__content--img {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      @media (max-width: 992px) {
+        .geometria .geometria__content .geometria__content--img {
+          width: 18rem;
+          height: 18rem;
+          margin: 1rem 0rem; } }
+      @media (min-width: 992px) {
+        .geometria .geometria__content .geometria__content--img {
+          width: 21rem;
+          height: 21rem;
+          margin: 1rem; } }
+      .geometria .geometria__content .geometria__content--img .geometria__content--img--text {
+        width: fit-content;
+        background-color: #efde8193;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 2rem;
+        letter-spacing: 4px;
+        color: #0647d1;
+        border-radius: 0.5rem;
+        text-align: center; }
+    .geometria .geometria__content #flor {
+      background-image: url(../../img/flor_de_la_vida.jpg); }
+    .geometria .geometria__content #metatron {
+      background-image: url(../../img/metraton.jpg); }
+
+.intencionar {
+  height: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .intencionar .intencionar__content {
+    display: flex;
+    justify-content: space-between; }
+    .intencionar .intencionar__content .intencionar__content--text {
+      height: min-content;
+      text-align: justify;
+      padding: 0rem 1rem 1rem 2rem; }
+    .intencionar .intencionar__content .intencionar__content--img {
+      background-image: url(../../img/5.jpg);
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat; }
+  @media (max-width: 992px) {
+    .intencionar .intencionar__content {
+      flex-direction: column; }
+      .intencionar .intencionar__content .intencionar__content--img {
+        height: 15rem;
+        margin-bottom: 2rem; } }
+  @media (min-width: 992px) {
+    .intencionar .intencionar__content .intencionar__content--text {
+      width: 50%; }
+    .intencionar .intencionar__content .intencionar__content--img {
+      width: 50%;
+      margin: 0rem 0rem 2rem 2rem; } }

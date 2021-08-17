@@ -10,8 +10,8 @@ const greeting = {
 export const App = () => {
   return (
     <div>
-      <NavBar />
-      <ItemListContainer greeting={greeting.greeting} />
+      <NavBar greeting={greeting.greeting}/>
+      <ItemListContainer/>
       <ItemDetailContainer />
     </div>
   );
