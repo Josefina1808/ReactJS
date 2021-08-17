@@ -11,7 +11,7 @@ const products = [
     title: "Botella Flor de la Vida",
     description: "Botella para solarizar",
     price: "1000",
-    image: "../../img/products/1.jpg",
+    image: "img/products/1.jpg",
     stock: "100",
   },
   {
