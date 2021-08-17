@@ -1,21 +1,20 @@
 import "./main.css";
 import { ItemCount } from "./ItemCount";
 
-function ItemDetail (id, title, description, image, price, stock) {
+export const ItemDetail = ({x}) => {
     return (
-        <div className="card__detail" id={id}>
+        <div className="card__detail" id={x.id}>
       <div className="card_product--title_principal">
-        <h3 className="card__detail--title">{title}</h3>
-        <p className="card__detail--desc">{description}</p>
+        <h3 className="card__detail--title">{x.title}</h3>
+        <p className="card__detail--desc">{x.description}</p>
       </div>
       <div className="card__detail--img">
-        <img src={image} alt="Foto de producto"/>
+        <img src={x.image} alt="Foto de producto"/>
       </div>
       <div className="card__detail--cta">
-        <div className="price">${price}</div>
-        <ItemCount stock={stock}/>
+        <div className="price">${x.price}</div>
+        <ItemCount stock={x.stock}/>
       </div>
     </div>
     )
-}
-export default ItemDetail();
+};

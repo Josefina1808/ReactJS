@@ -27,6 +27,7 @@ export const App = () => {
         </Switch>
       </BrowserRouter>
       <Footer />
+      <ItemDetailContainer />
     </div>
   );
 };
