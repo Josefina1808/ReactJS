@@ -17,16 +17,9 @@ export const NavBar = ({ greeting }) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end">
-              <Nav.Link href="#home">Inicio</Nav.Link>
-              <NavDropdown title="Productos" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Botellas</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Accesorios
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Vasos</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">Otros</NavDropdown.Item>
-              </NavDropdown>
-              <Nav.Link href="#contacto">Contacto</Nav.Link>
+              <Nav.Link href="home">Inicio</Nav.Link>
+              <Nav.Link href="productos">Productos</Nav.Link>
+              <Nav.Link href="contacto">Contacto</Nav.Link>
             </Nav>
             <Cart />
           </Navbar.Collapse>
