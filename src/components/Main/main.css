@@ -1,3 +1,4 @@
+/* NORMALIZE */
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,7 @@
   margin: 0;
 }
 
+/* CARROUSEL */
 .carousel-control-prev,
 .carousel-control-next,
 .carousel-indicators {
@@ -22,6 +24,7 @@
   font-size: 3rem;
 }
 
+/* CARD de PRODUCTS */
 .card__product {
   margin: 0.5rem 1rem 1rem 1rem;
   padding: 0.5rem 0rem 0.75rem 0rem;
@@ -51,6 +54,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.productos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .productos .card__product .card__product--img img {
@@ -94,6 +105,89 @@
 }
 
 .card__product--btn_add {
+  padding: 0.5rem;
+  background-color: white;
+  border: solid 1px rgba(135, 206, 250, 0.671);
+  border-radius: 10px;
+  color: lightskyblue;
+  display: flex;
+  margin: 0 auto;
+}
+
+/* ItemDetailContainer */
+
+.card__detail {
+  margin: 0.5rem 1rem 1rem 1rem;
+  padding: 0.5rem 0rem 0.75rem 0rem;
+  background-color: rgba(209, 209, 209, 0.521);
+  width: 100%;
+  height: auto;
+}
+
+.card__detail .card_product--title_principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card__detail .card_product--title_principal .card__detail--title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card__detail .card_product--title_principal .card__detail--desc {
+  font-weight: 200;
+  text-align: center;
+  padding: 0rem 0rem 0.25rem 0rem;
+}
+
+.productos .card__detail .card__detail--img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productos .card__detail .card__detail--img img {
+  height: 14rem;
+  width: 14rem;
+  border-radius: 6px;
+}
+
+.productos .card__detail .card__detail--cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+}
+
+.productos .card__detail .card__detail--cta .price {
+  color: #012e67;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card__detail--btn_qty {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.3rem;
+  background-color: white;
+  border: solid 1px rgba(135, 206, 250, 0.671);
+  border-radius: 10px;
+  margin: 0.5rem;
+}
+
+.card__detail--btn_qty button {
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  color: lightskyblue;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+}
+
+.card__detail--btn_add {
   padding: 0.5rem;
   background-color: white;
   border: solid 1px rgba(135, 206, 250, 0.671);

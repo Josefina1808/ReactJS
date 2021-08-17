@@ -5,7 +5,7 @@ import Item from "./Item"
 //import IMG from "../../img/products/1.jpg";
 
 export const ItemList = (props) => {
-    console.log(props)
+    
     return (
     <div className="productos">
       <>
