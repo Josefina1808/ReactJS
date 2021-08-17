@@ -9,7 +9,7 @@ export const NavBar = () => {
     <div>
         <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand href="#home"> <img className="logo-nav" src={Logo}/> </Navbar.Brand>
+    <Navbar.Brand href="#home"> <img className="logo-nav" src={Logo} alt="logo de la marca"/> </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="justify-content-end">
