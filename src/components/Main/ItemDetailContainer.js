@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./main.css";
-import ItemDetail from "./ItemDetail";
+//import ItemDetail from "./ItemDetail";
 
 const productsDetail = [
   {
@@ -32,9 +32,11 @@ export const ItemDetailContainer = () => {
   console.log(state);
   return (
     <div>
-       <ItemDetail id={state.id} title={state.title} description={state.description} price={state.price} image={state.image}/>
+       {/* Aquí va lo comentado debajo, que no funciona */}
     </div>
   );
 };
+
+/* <ItemDetail id={state.id} title={state.title} description={state.description} price={state.price} image={state.image}/> */
 
 
