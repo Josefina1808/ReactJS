@@ -1,16 +1,20 @@
 import React from "react";
 import "./main.css";
-import Item from "./Item";
-import IMG from "../../img/products/1.jpg";
+import Item from "./Item"
+//import Item from "./Item";
+//import IMG from "../../img/products/1.jpg";
 
 export const ItemList = (props) => {
-  return (
-    <div className="productos container">
+    console.log(props)
+    return (
+    <div className="productos">
       <>
-        {props.map((x) => (
+        {props.state.map((x) => (
           <Item x={x} />
         ))}
       </>
     </div>
   );
 };
+
+/*  */

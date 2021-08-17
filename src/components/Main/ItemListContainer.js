@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Img1 from "../../img/bg-shop.jpg";
-import { Carousel } from "react-bootstrap";
+import Img0 from "../../img/bg-shop.jpg";
+import { Carousel, Container } from "react-bootstrap";
 import { ItemList } from "./ItemList";
 import "./main.css";
 
@@ -99,38 +99,34 @@ const products = [
 export const ItemListContainer = ({ greeting }) => {
   const [state, setState] = useState([]); // --> tu estado debe empezar como un array
 
-  const task = () => {
-    new Promise(({ resolve, reject }) => {
-      setTimeout(() => {
-        resolve(products);
-      }, 200);
-    });
-  }; // --> aqui terminas de declarar la promesa
+  const task = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(products);
+    }, 200);
+  }); // --> aqui terminas de declarar la promesa
 
   useEffect(() => {
     // --> el useEffect recibe una función callback como parámetro
-    task() // --> aquí invocas la función
-      .then(
-        (result) => {
-          setState(result);
-        },
-        (err) => console.log(err)
-      )
-      .finally(() => <ItemList state={state} />);
+    task // --> aquí invocas la función
+      .then((result) => {
+        setState(result);
+      });
   }, []); // --> y los corchetes para que no te genere un loop infinito
 
   return (
     <div>
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={Img1} alt="First slide" />
+          <img className="d-block w-100" src={Img0} alt="First slide" />
           <Carousel.Caption>
             <h3>SunWater</h3>
             <p>{greeting}</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <ItemList state={state} />
+      <Container>
+        <ItemList state={state} />
+      </Container>
     </div>
   );
 };
