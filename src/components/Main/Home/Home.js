@@ -26,7 +26,7 @@ export const Home = () => {
                 frecuencia 432 hz, es la nueva frecuencia de la tierra, o bien
                 frecuencias de Solfeggio. Puedes ver nuestras playlists
                 recomendadas en la{" "}
-                <a href="html/galeria.html" target="_blank">
+                <a href="html/galeria.html" target="_blank" rel="noreferrer">
                   galería musical
                 </a>
                 . Deja las botellas expuestas al sol por al menos 3 horas, no
@@ -82,7 +82,7 @@ export const Home = () => {
                   <a
                     className="geometria__content--img--text"
                     href="https://es.wikipedia.org/wiki/Flor_de_la_Vida"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     Flor de la Vida
                   </a>
@@ -95,7 +95,7 @@ export const Home = () => {
                   <a
                     className="geometria__content--img--text"
                     href="https://en.wikipedia.org/wiki/Metatron#:~:text=In%20folkloristic%20tradition%2C%20he%20is,his%20transformation%20into%20an%20angel."
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     Metatrón
                   </a>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, NavDropdown, Container, Carousel } from "react-bootstrap";
+import { Nav, Navbar, Container, Carousel } from "react-bootstrap";
 import Img0 from "../../img/bg-shop.jpg";
 import "./navbar.css";
 import Logo from "../../img/logo.svg";

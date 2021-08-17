@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Img0 from "../../img/bg-shop.jpg";
-import { Carousel, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { ItemList } from "./ItemList";
 import products from "./products/products" //"Base de datos de productos"
 import "./main.css";
