@@ -1,9 +1,15 @@
 import "./main.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ItemCount } from "./ItemCount";
 import { Container } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 export const ItemDetail = ({ state }) => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (counter, item) => {
+    setCart([...cart, {item, counter}]);
+  };
+  console.log(cart);
   return (
     <Container className="card__detail" id={state.id}>
       <div className="card__detail--img">
@@ -17,14 +23,13 @@ export const ItemDetail = ({ state }) => {
 
         <div className="card__detail--cta">
           <div className="price">${state.price}</div>
-          <ItemCount stock={state.stock}/>
+          <ItemCount item={state} addToCart={addToCart} />
         </div>
-        <button className="card__detail--btn_add">
-          Agregar al carrito
-        </button>
-        <a className="card__detail--btn_finish" href="cart">
-          Finalizar compra
-        </a>
+        {cart.length > 0 && 
+          <Link className="card__detail--btn_finish" to="/cart">
+            Finalizar compra
+          </Link>
+        }
       </div>
     </Container>
   );

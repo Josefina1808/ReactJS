@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./main.css";
 
-export const ItemCount = ({ stock }) => {
+
+export const ItemCount = ({ item, addToCart }) => {
   const [counter, setCounter] = useState(1);
 
   const onAdd = () => {
-    if (counter < stock) {
+    if (counter < item.stock) {
       setCounter(counter + 1);
     }
   };
@@ -23,6 +24,7 @@ export const ItemCount = ({ stock }) => {
         <p>{counter}</p>
         <button onClick={onAdd}>+</button>
       </div>
+      <button className="card__detail--btn_add" onClick={() => addToCart(counter,item)}>Agregar al carrito</button>
     </div>
   );
 };

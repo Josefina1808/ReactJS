@@ -2,7 +2,6 @@ import React from "react";
 import "./main.css";
 import { ItemCount } from "./ItemCount";
 import Swal from "sweetalert2";
-import { ItemDetailContainer } from "./ItemDetailContainer";
 import { Link } from "react-router-dom";
 
 function Item({ x }) {
@@ -15,7 +14,7 @@ function Item({ x }) {
       timer: 1400,
     });
   };
-  console.log(x)
+  
   return (
     <div className="card__product" id={x.id}>
       <div className="card_product--title_principal">
@@ -27,7 +26,7 @@ function Item({ x }) {
       </div>
       <div className="card__product--cta">
         <div className="price">${x.price}</div>
-        <ItemCount stock={x.stock} />
+        {/* <ItemCount stock={x.stock} /> */}
       </div>
       <div className="flex-row">
         <button className="card__product--btn_add" onClick={alertAdd}>
@@ -36,7 +35,7 @@ function Item({ x }) {
 
         <Link
           className="card__product--btn_add"
-          href={ItemDetailContainer()}>
+          to={`/item/${x.id}`}>
           Ver más
         </Link>
       </div>

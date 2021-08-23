@@ -6,7 +6,7 @@ import { Home } from "./components/Main/Home/Home";
 import { Contacto } from "./components/Main/Contacto/Contacto";
 import { Cart } from "./components/Main/Cart/Cart";
 import { ItemListContainer } from "./components/Main/ItemListContainer";
-//import { ItemDetailContainer } from "./components/Main/ItemDetailContainer";
+import { ItemDetailContainer } from "./components/Main/ItemDetailContainer";
 
 export const App = () => {
   return (
@@ -16,6 +16,7 @@ export const App = () => {
         <Switch>
           <Route exact path="/home" component={Home}/>
           <Route exact path="/productos" component={ItemListContainer} />
+          <Route exact path="/item/:id" component={ItemDetailContainer} />
           <Route exact path="/contacto" component={Contacto} />
           <Route exact path="/cart" component={Cart} />
         </Switch>

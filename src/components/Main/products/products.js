@@ -1,7 +1,7 @@
 //array con productos
 const products = [
     {
-      id: "1",
+      id: 1,
       title: "Botella Flor de la Vida",
       description: "Botella para solarizar",
       price: "1000",
@@ -9,7 +9,7 @@ const products = [
       stock: "100",
     },
     {
-      id: "2",
+      id: 2,
       title: "Botella Metatrón",
       description: "Botella para solarizar",
       price: "1000",
