@@ -1,6 +1,7 @@
 import "./main.css";
+import React from "react";
 import { ItemCount } from "./ItemCount";
-import { Container } from "react-bootstrap";
+import { Container, Link } from "react-bootstrap";
 
 export const ItemDetail = ({ state }) => {
   return (
@@ -21,9 +22,9 @@ export const ItemDetail = ({ state }) => {
         <button className="card__detail--btn_add">
           Agregar al carrito
         </button>
-        <button className="card__detail--btn_finish">
+        <a className="card__detail--btn_finish" href="cart">
           Finalizar compra
-        </button>
+        </a>
       </div>
     </Container>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import "./main.css";
 import { ItemCount } from "./ItemCount";
 import Swal from 'sweetalert2'
-import {Link} from 'react-router-dom'
 import {ItemDetailContainer} from "./ItemDetailContainer"
 
 function Item({ x }) {
