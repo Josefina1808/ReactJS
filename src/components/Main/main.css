@@ -107,7 +107,6 @@
 /* ItemDetailContainer */
 
 .card__detail {
-  margin: 0 auto;
   padding: 0.5rem 0rem 0.75rem 0rem;
   background-color: rgba(209, 209, 209, 0.521);
   width: 100%;
@@ -151,9 +150,9 @@
   align-items: center;
 }
 
-.productos .card__detail .card__detail--img img {
-  height: 14rem;
-  width: 14rem;
+.card__detail--img img {
+  height: 18rem;
+  width: 18rem;
   border-radius: 6px;
 }
 
@@ -167,10 +166,11 @@
 .card__detail--cta .price {
   color: #012e67;
   font-size: 1.5rem;
+  text-align: center
 }
 
 .card__detail--btn_qty {
-  margin: 0 auto;
+  margin: 0.5rem auto;
 }
 
 .card__detail--btn_qty button {

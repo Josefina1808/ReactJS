@@ -5,7 +5,7 @@ const products = [
       title: "Botella Flor de la Vida",
       description: "Botella para solarizar",
       price: "1000",
-      image: "img/products/1.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760750/1_gzg7gb.jpg",
       stock: "100",
     },
     {
@@ -13,7 +13,7 @@ const products = [
       title: "Botella Metatrón",
       description: "Botella para solarizar",
       price: "1000",
-      image: "img/products/2.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760750/2_wvjv6e.jpg",
       stock: "100",
     },
     {
@@ -21,7 +21,7 @@ const products = [
       title: "Posa Botella Metatrón",
       description: "Para solarización",
       price: 469,
-      image: "img/products/3.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760750/3_x6uhn0.jpg",
       stock: 50,
     },
     {
@@ -29,7 +29,7 @@ const products = [
       title: "Posa Botella Flor",
       description: "Para solarización",
       price: 469,
-      image: "img/products/4.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760750/4_kkyjrk.jpg",
       stock: 50,
     },
     {
@@ -37,7 +37,7 @@ const products = [
       title: "Pulsera Metratón",
       description: "Pulsera con energía positiva",
       price: 439,
-      image: "img/products/5.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760751/5_sqfec1.jpg",
       stock: 20,
     },
     {
@@ -45,7 +45,7 @@ const products = [
       title: "Pulsera Flor de la Vida",
       description: "Pulsera con energía positiva",
       price: 439,
-      image: "img/products/6.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760750/6_acts3h.jpg",
       stock: 20,
     },
     {
@@ -53,7 +53,7 @@ const products = [
       title: "Vaso cristal azul",
       description: "Capacidad: 600cc",
       price: 969,
-      image: "img/products/7.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760751/7_n3rpm1.jpg",
       stock: 48,
     },
     {
@@ -61,7 +61,7 @@ const products = [
       title: "Copa cristal azul",
       description: "Capacidad: 600cc",
       price: 1136,
-      image: "img/products/8.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760751/8_gsw4ze.jpg",
       stock: 36,
     },
     {
@@ -69,7 +69,7 @@ const products = [
       title: "Agua mineral Sola´n de Cabras",
       description: "500 ml - Botella de vidrio",
       price: 533,
-      image: "img/products/9.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760751/9_qfbph3.jpg",
       stock: 12,
     },
     {
@@ -77,15 +77,15 @@ const products = [
       title: "Agua mineral Sola´n de Cabras",
       description: "750 ml - Botella de vidrio",
       price: 789,
-      image: "img/products/10.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760751/10_ozpuwc.jpg",
       stock: 12,
     },
     {
-      id: 10,
+      id: 11,
       title: "Agua mineral Sola´n de Cabras",
       description: "1000 ml - Botella de vidrio",
       price: 996,
-      image: "img/products/11.jpg",
+      image: "https://res.cloudinary.com/josefina18/image/upload/v1629760750/11_ma7gjc.jpg",
       stock: 12,
     },
   ]

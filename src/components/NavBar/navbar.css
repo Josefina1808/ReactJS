@@ -1,11 +1,28 @@
+* a {
+  text-decoration: none;
+}
 .fas.fa-shopping-cart {
     display: flex;
     align-items: center;
-    color: black;
+    color: #012e67;
+    text-decoration: none;
+    margin: 0rem 1rem;
+}
+.fas.fa-shopping-cart:hover {
+  color: white;
 }
 
 .navbar-bg {
   background-color: #0f62959d!important;
+  margin-bottom: 1rem;
+}
+
+.navbar-nav a {
+  color:#012e67;
+  margin: 0rem 0.5rem;
+}
+.navbar-nav a:hover {
+  color: white;
 }
 
 .logo-nav {

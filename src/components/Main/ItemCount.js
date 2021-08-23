@@ -19,7 +19,7 @@ export const ItemCount = ({ item, addToCart }) => {
 
   return (
     <div>
-      <div className="card__product--btn_qty">
+      <div className="card__product--btn_qty card__detail--btn_qty">
         <button onClick={onDecrease}>-</button>
         <p>{counter}</p>
         <button onClick={onAdd}>+</button>
