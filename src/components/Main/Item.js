@@ -1,19 +1,21 @@
 import React from "react";
 import "./main.css";
 import { ItemCount } from "./ItemCount";
-import Swal from 'sweetalert2'
-import {ItemDetailContainer} from "./ItemDetailContainer"
+import Swal from "sweetalert2";
+import { ItemDetailContainer } from "./ItemDetailContainer";
+import { Link } from "react-router-dom";
 
 function Item({ x }) {
   const alertAdd = () => {
     Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Producto añadido al carrito',
+      position: "top-end",
+      icon: "success",
+      title: "Producto añadido al carrito",
       showConfirmButton: false,
-      timer: 1400
-    })
-  }
+      timer: 1400,
+    });
+  };
+  console.log(x)
   return (
     <div className="card__product" id={x.id}>
       <div className="card_product--title_principal">
@@ -31,7 +33,12 @@ function Item({ x }) {
         <button className="card__product--btn_add" onClick={alertAdd}>
           Agregar al carrito
         </button>
-        <button className="card__product--btn_add" onClick={ItemDetailContainer}>Ver más</button>
+
+        <Link
+          className="card__product--btn_add"
+          href={ItemDetailContainer()}>
+          Ver más
+        </Link>
       </div>
     </div>
   );

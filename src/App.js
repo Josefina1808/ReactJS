@@ -6,7 +6,7 @@ import { Home } from "./components/Main/Home/Home";
 import { Contacto } from "./components/Main/Contacto/Contacto";
 import { Cart } from "./components/Main/Cart/Cart";
 import { ItemListContainer } from "./components/Main/ItemListContainer";
-import { ItemDetailContainer } from "./components/Main/ItemDetailContainer";
+//import { ItemDetailContainer } from "./components/Main/ItemDetailContainer";
 
 export const App = () => {
   return (
@@ -24,3 +24,12 @@ export const App = () => {
     </div>
   );
 };
+
+/* DUDAS */
+/* 
+- Como mostrar itemDetailContainer, debo crear una ruta? (cómo es lo de categorías?)
+- Como hacer con las fotos y la ruta al pasar al itemDetail
+- Cómo llamar los datos en el item detail
+- Desde Item le podría mandar el objeto a itemDetailContainer??
+
+*/

@@ -1,7 +1,7 @@
 import "./main.css";
 import React from "react";
 import { ItemCount } from "./ItemCount";
-import { Container, Link } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 export const ItemDetail = ({ state }) => {
   return (
