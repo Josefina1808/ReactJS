@@ -1,10 +1,11 @@
 import React from 'react';
+import { Nav } from "react-bootstrap";
 import './navbar.css';
 
 
-export const Cart = () => {
+export const CartWidget = () => {
     return (
-        <i className="fas fa-shopping-cart"></i>
+        <Nav.Link href="cart"><i className="fas fa-shopping-cart"></i></Nav.Link>
     );
 };
 

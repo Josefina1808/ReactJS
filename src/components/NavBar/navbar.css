@@ -1,6 +1,11 @@
 .fas.fa-shopping-cart {
     display: flex;
     align-items: center;
+    color: black;
+}
+
+.navbar-bg {
+  background-color: #0f62959d!important;
 }
 
 .logo-nav {

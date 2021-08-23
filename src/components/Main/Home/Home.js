@@ -1,10 +1,20 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Carousel } from "react-bootstrap";
+import Img0 from "../../../img/bg-shop.jpg";
 import "../main.css";
 
 export const Home = () => {
   return (
     <div>
+      <Carousel>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Img0} alt="First slide" />
+          <Carousel.Caption>
+            <h3>SunWater</h3>
+            <p>Bienvenido a la tienda online de SunWater</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
       <Container>
         <section className="solarizar">
           <h2>SOLARIZAR EL AGUA</h2>
