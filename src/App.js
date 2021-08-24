@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar/navBar";
 import { Footer } from "./components/Footer/Footer";
@@ -7,18 +7,22 @@ import { Contacto } from "./components/Main/Contacto/Contacto";
 import { Cart } from "./components/Main/Cart/Cart";
 import { ItemListContainer } from "./components/Main/ItemListContainer";
 import { ItemDetailContainer } from "./components/Main/ItemDetailContainer";
+import { CartContext } from "./context/cartContext";
 
 export const App = () => {
+  const [cartContext, setCartContext] = useState([]);
   return (
     <div>
       <BrowserRouter>
-        <NavBar  />
+        <NavBar />
         <Switch>
-          <Route exact path="/home" component={Home}/>
-          <Route exact path="/productos" component={ItemListContainer} />
-          <Route exact path="/item/:id" component={ItemDetailContainer} />
-          <Route exact path="/contacto" component={Contacto} />
-          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/home" component={Home} />
+          <CartContext.Provider value={cartContext}>
+            <Route exact path="/productos" component={ItemListContainer} />
+            <Route exact path="/item/:id" component={ItemDetailContainer} />
+            <Route exact path="/contacto" component={Contacto} />
+            <Route exact path="/cart" component={Cart} />
+          </CartContext.Provider>
         </Switch>
       </BrowserRouter>
       <Footer />
