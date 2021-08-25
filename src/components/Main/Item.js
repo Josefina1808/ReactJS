@@ -19,7 +19,7 @@ function Item({ x }) {
       </div>
       <div className="flex-row">
         <Link
-          className="card__product--btn_add"
+          className="card__product--btn_more btn"
           to={`/item/${x.id}`}>
           Ver más
         </Link>
