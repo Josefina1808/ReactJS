@@ -1,8 +1,10 @@
 import "./main.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ItemCount } from "./ItemCount";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import {useCart, useCartUpdate, CartProvider} from "../../context/cartContext"
+
 export const ItemDetail = ({ state }) => {
   const [cart, setCart] = useState([]);
 

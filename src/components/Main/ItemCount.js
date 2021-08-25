@@ -24,7 +24,7 @@ export const ItemCount = ({ item, addToCart }) => {
         <p>{counter}</p>
         <button onClick={onAdd}>+</button>
       </div>
-      <button className="card__detail--btn_add" onClick={() => addToCart(counter,item)}>Agregar al carrito</button>
+      <button className="card__detail--btn_add btn" onClick={() => addToCart(counter,item)}>Agregar al carrito</button>
     </div>
   );
 };

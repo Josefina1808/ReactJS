@@ -1,40 +1,15 @@
-import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { NavBar } from "./components/NavBar/navBar";
+import React from "react";
+import { CartProvider } from "./context/cartContext";
+import { Router } from "./router/Router";
 import { Footer } from "./components/Footer/Footer";
-import { Home } from "./components/Main/Home/Home";
-import { Contacto } from "./components/Main/Contacto/Contacto";
-import { Cart } from "./components/Main/Cart/Cart";
-import { ItemListContainer } from "./components/Main/ItemListContainer";
-import { ItemDetailContainer } from "./components/Main/ItemDetailContainer";
-import { CartContext } from "./context/cartContext";
 
 export const App = () => {
-  const [cartContext, setCartContext] = useState([]);
   return (
     <div>
-      <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path="/home" component={Home} />
-          <CartContext.Provider value={cartContext}>
-            <Route exact path="/productos" component={ItemListContainer} />
-            <Route exact path="/item/:id" component={ItemDetailContainer} />
-            <Route exact path="/contacto" component={Contacto} />
-            <Route exact path="/cart" component={Cart} />
-          </CartContext.Provider>
-        </Switch>
-      </BrowserRouter>
+      <CartProvider>
+        <Router />
+      </CartProvider>
       <Footer />
     </div>
   );
 };
-
-/* DUDAS */
-/* 
-- Como mostrar itemDetailContainer, debo crear una ruta? (cómo es lo de categorías?)
-- Como hacer con las fotos y la ruta al pasar al itemDetail
-- Cómo llamar los datos en el item detail
-- Desde Item le podría mandar el objeto a itemDetailContainer??
-
-*/
