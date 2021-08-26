@@ -19,7 +19,7 @@ export const ItemDetailContainer = () => {
       setState(result);
     }); 
   }, [id]);
- 
+  
   return (
     <div>
       {state.length && <ItemDetail state={state.find((product) => Number(id) === product.id)}/>}

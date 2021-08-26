@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function Item({ x }) {
   
-  
   return (
     <div className="card__product" id={x.id}>
       <div className="card_product--title_principal">

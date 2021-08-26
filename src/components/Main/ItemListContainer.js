@@ -20,7 +20,7 @@ export const ItemListContainer = () => {
         setState(result);
       });
   }, []); // --> y los corchetes para que no te genere un loop infinito
-
+  console.log(state)
   return (
     <div>
       <Container>

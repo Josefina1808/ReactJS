@@ -1,17 +1,13 @@
-import React from "react";
-import {
-  CartContextProvider,
-  useCart,
-  useCartUpdate,
-} from "../../../context/cartContext";
+import React, { useContext, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import "./Cart.css";
 import { ItemCount } from "../ItemCount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../context/cartContext";
 
 export const Cart = () => {
-  const cart = useCart();
-  console.log("cart", cart);
+  const {cart} = useContext(CartContext);
+  
   return (
     <Container>
       <h1>UNA SECCIÓN VACÍA</h1>
@@ -29,7 +25,7 @@ export const Cart = () => {
           </div>
         </div>
         <div className="card__cart--actions">
-          <ItemCount /* item={state} addToCart={addToCart} */ />
+          <ItemCount item={cart} />
           <div className="price">$1000</div>
           <button className="btn_remove btn">X</button>
         </div>

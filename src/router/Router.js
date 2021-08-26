@@ -6,6 +6,7 @@ import { Contacto } from "../components/Main/Contacto/Contacto";
 import { Cart } from "../components/Main/Cart/Cart";
 import { ItemListContainer } from "../components/Main/ItemListContainer";
 import { ItemDetailContainer } from "../components/Main/ItemDetailContainer";
+import { CartProvider } from "../context/cartContext";
 
 export const Router = () => {
   return (
@@ -15,9 +16,11 @@ export const Router = () => {
         <Switch>
           <Route exact path="/home" component={Home} />
           <Route exact path="/contacto" component={Contacto} />
-          <Route exact path="/productos" component={ItemListContainer} />
-          <Route exact path="/item/:id" component={ItemDetailContainer} />
-          <Route exact path="/cart" component={Cart} />
+          <CartProvider>
+            <Route exact path="/productos" component={ItemListContainer} />
+            <Route exact path="/item/:id" component={ItemDetailContainer} />
+            <Route exact path="/cart" component={Cart} />
+          </CartProvider>
         </Switch>
       </BrowserRouter>
     </div>

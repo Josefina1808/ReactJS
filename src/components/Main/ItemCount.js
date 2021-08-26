@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./main.css";
+import {CartContext} from "../../context/cartContext"
 
 
-export const ItemCount = ({ item, addToCart }) => {
+export const ItemCount = ({ item }) => {
+  const { addItem } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
   const [counter, setCounter] = useState(1);
-
+  
+  console.log("cart", cart);
   const onAdd = () => {
     if (counter < item.stock) {
       setCounter(counter + 1);
@@ -24,7 +28,7 @@ export const ItemCount = ({ item, addToCart }) => {
         <p>{counter}</p>
         <button onClick={onAdd}>+</button>
       </div>
-      <button className="card__detail--btn_add btn" onClick={() => addToCart(counter,item)}>Agregar al carrito</button>
+      <button className="card__detail--btn_add btn" onClick={() => addItem(item, counter)}>Agregar al carrito</button>
     </div>
   );
 };

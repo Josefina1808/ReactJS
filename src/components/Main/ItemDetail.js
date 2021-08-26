@@ -1,17 +1,14 @@
 import "./main.css";
-import React, { useState } from "react";
+import React, {useContext} from "react";
 import { ItemCount } from "./ItemCount";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {useCart, useCartUpdate, CartProvider} from "../../context/cartContext"
+import {CartContext} from "../../context/cartContext"
+
 
 export const ItemDetail = ({ state }) => {
-  const [cart, setCart] = useState([]);
+  const { cart } = useContext(CartContext)
 
-  const addToCart = (counter, item) => {
-    setCart([...cart, {item, counter}]);
-  };
-  console.log(cart);
   return (
     <Container className="card__detail" id={state.id}>
       <div className="card__detail--img">
@@ -25,7 +22,7 @@ export const ItemDetail = ({ state }) => {
 
         <div className="card__detail--cta">
           <div className="price">${state.price}</div>
-          <ItemCount item={state} addToCart={addToCart} />
+          <ItemCount item={state} />
         </div>
         {cart.length > 0 && 
           <Link className="card__detail--btn_finish" to="/cart">
