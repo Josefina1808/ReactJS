@@ -12,16 +12,16 @@ export const Router = () => {
   return (
     <div>
       <BrowserRouter>
-        <NavBar />
-        <Switch>
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/contacto" component={Contacto} />
-          <CartProvider>
+        <CartProvider>
+          <NavBar />
+          <Switch>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/contacto" component={Contacto} />
             <Route exact path="/productos" component={ItemListContainer} />
             <Route exact path="/item/:id" component={ItemDetailContainer} />
             <Route exact path="/cart" component={Cart} />
-          </CartProvider>
-        </Switch>
+          </Switch>
+        </CartProvider>
       </BrowserRouter>
     </div>
   );

@@ -8,7 +8,6 @@ export const ItemCount = ({ item }) => {
   const { cart } = useContext(CartContext);
   const [counter, setCounter] = useState(1);
   
-  console.log("cart", cart);
   const onAdd = () => {
     if (counter < item.stock) {
       setCounter(counter + 1);
