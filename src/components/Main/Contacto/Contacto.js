@@ -5,7 +5,7 @@ import "./Contacto.css";
 export const Contacto = () => {
   return (
     <div>
-      <section className="contacto container">
+      <section className="contacto container main">
         <Container>
           <div className="contacto__texto">
             <h2>CONTÁCTANOS</h2>

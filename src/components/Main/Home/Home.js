@@ -15,7 +15,7 @@ export const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <Container>
+      <Container className="main">
         <section className="solarizar">
           <h2>SOLARIZAR EL AGUA</h2>
           <div className="solarizar__content">

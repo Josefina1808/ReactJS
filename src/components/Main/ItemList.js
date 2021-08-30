@@ -7,7 +7,7 @@ import Item from "./Item"
 export const ItemList = (props) => {
     
     return (
-    <div className="productos">
+    <div className="productos main">
       <>
         {props.state.map((x) => (
           <Item x={x} />
