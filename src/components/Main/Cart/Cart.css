@@ -2,7 +2,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* CARD CART */
+/* CART HEADER */
 .cart__header {
   padding: 0.5rem;
   background-color: rgba(209, 209, 209, 0.521);
@@ -26,6 +26,9 @@
   font-size: 1.5rem;
   margin: 0 0.5rem;
 }
+
+/* CARD CART */
+
 .card__cart {
   padding: 0.5rem;
   background-color: rgba(209, 209, 209, 0.521);
@@ -108,4 +111,14 @@
 .btn_remove {
   height: fit-content;
   margin: 0 auto;
+}
+
+/* CART FOOTER */
+
+.cart__footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #012e67;
 }

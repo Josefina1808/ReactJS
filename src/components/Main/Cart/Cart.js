@@ -9,7 +9,8 @@ export const Cart = () => {
   const { cart } = useContext(CartContext);
   /* Ahora debemos leer la lista para imprimir en el item */
   console.log("cart", cart);
-  const { addItem, removeItem, clearCart } = useContext(CartContext);
+  const { removeItem, clearCart, getSubtotal, getTotal, itemQuantity} = useContext(CartContext);
+
   return (
     <Container>
       <h1>Carrito</h1>
@@ -47,7 +48,7 @@ export const Cart = () => {
               <ItemCount item={item} />
               <div className="price">{counter}</div>
               <div className="price">${item.price}</div>
-              <div className="price">$subtotal</div>
+              <div className="price">${getSubtotal(counter, item.price)}</div>
               <button
                 className="btn_remove btn"
                 onClick={() => removeItem(item.id)}
@@ -58,12 +59,15 @@ export const Cart = () => {
           </Container>
         ))}
       {cart.length !== 0 && (
-        <Container>
+        <Container className="cart__footer">
           <button
             className="btn"
             onClick={clearCart}>
             Vaciar carrito
           </button>
+          <div>
+            Total ${getTotal()}
+          </div>
         </Container>
       )}
     </Container>

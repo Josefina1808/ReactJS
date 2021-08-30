@@ -5,28 +5,63 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-   const isInCart = (id) => {cart.includes(({item}) => item.id === id)}; 
-   /* Siempre es undefined por lo tanto siempre se ejecuta el addItem */
+  const isInCart = (id) => {
+    return cart.find((item) => item.item.id === id);
+  };
 
   const addItem = (item, counter) => {
     if (isInCart(item.id) === undefined) {
       setCart([...cart, { item, counter }]);
     } else {
-      console.log(isInCart(item.id))
+      console.log(
+        "El producto ya está en el carrito, debe aumentar el counter pero no agregarlo nuevamente"
+      );
     }
-    console.log(isInCart(item.id))
   };
- 
 
   const removeItem = (id) => {
-    const newItem = cart.filter(({item}) => item.id !== id);
+    const newItem = cart.filter(({ item }) => item.id !== id);
     setCart(newItem);
   };
 
   const clearCart = () => setCart([]);
 
+  const getSubtotal = (counter, price) => {
+    let result = counter * price;
+    return result;
+  };
+
+  function sumar(lista) {
+    let resultado = 0;
+    for (let i = 0; i < lista.length; i++) {
+      resultado += lista[i];
+    }
+    return resultado;
+  }
+
+  const getTotal = () => {
+    let subtotales = cart.map((item) => item.counter * item.item.price);
+    return sumar(subtotales);
+  };
+
+  const itemQuantity = () => {
+    let q = cart.map((item) => item.counter);
+    let result = sumar(q);
+    return result;
+  };
+
   return (
-    <CartContext.Provider value={{ addItem, removeItem, clearCart, cart }}>
+    <CartContext.Provider
+      value={{
+        addItem,
+        removeItem,
+        clearCart,
+        cart,
+        getSubtotal,
+        getTotal,
+        itemQuantity,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

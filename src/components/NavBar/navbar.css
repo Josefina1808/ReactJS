@@ -1,6 +1,9 @@
 * a {
   text-decoration: none;
 }
+
+/* CARTWIDGET */
+
 .fas.fa-shopping-cart {
     display: flex;
     align-items: center;
@@ -12,6 +15,13 @@
   color: white;
 }
 
+.cartWidget {
+  display: flex;
+  color: #012e67;
+  font-size: 1.2rem;
+}
+
+/* NAVBAR */
 .navbar-bg {
   background-color: #0f62959d!important;
   margin-bottom: 1rem;

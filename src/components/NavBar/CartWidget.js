@@ -1,12 +1,14 @@
-import React from 'react';
-import './navbar.css';
-import { Link } from "react-router-dom"
-
+import React, {useCallback, useContext} from "react";
+import "./navbar.css";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/cartContext";
 
 export const CartWidget = () => {
-    
-    return (
-        <Link to="/cart"><i className="fas fa-shopping-cart"></i></Link>
-    );
+    const {itemQuantity} = useContext(CartContext)
+  return (
+    <Link to="/cart" className="cartWidget">
+      <i className="fas fa-shopping-cart"></i>
+     <p>{itemQuantity()}</p>
+    </Link>
+  );
 };
-
