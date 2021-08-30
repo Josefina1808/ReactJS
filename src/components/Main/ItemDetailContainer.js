@@ -8,6 +8,7 @@ import products from "./products/products"
 export const ItemDetailContainer = () => {
   const [state, setState] = useState([]);
   const {id} = useParams();
+  
   const getItem = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(products);

@@ -10,12 +10,15 @@ export const CartProvider = ({ children }) => {
   };
 
   const addItem = (item, counter) => {
-    if (isInCart(item.id) === undefined) {
+    if (!isInCart(item.id)) {
       setCart([...cart, { item, counter }]);
     } else {
-      console.log(
-        "El producto ya está en el carrito, debe aumentar el counter pero no agregarlo nuevamente"
-      );
+      setCart(cart.map((i) => {
+        if (i.item.id === item.id) {
+          i.counter = i.counter + counter; 
+        }
+        return i
+      }))
     }
   };
 
