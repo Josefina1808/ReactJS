@@ -11,6 +11,19 @@ export const Cart = () => {
   console.log("cart", cart);
   const { removeItem, clearCart, getSubtotal, getTotal, itemQuantity} = useContext(CartContext);
 
+  const handleFinish = () => {
+    const newOrder = {
+      buyer: {
+        name: "Josefina",
+        phone: "2644148548",
+        email: "josefinaesna@gmail.com",
+      },
+      items: cart.map(({id, title, price}) => ({
+        id, title, price,
+      })), 
+    };
+  };
+
   return (
     <Container>
       <h1>Carrito</h1>
@@ -68,6 +81,11 @@ export const Cart = () => {
           <div>
             Total ${getTotal()}
           </div>
+          <button
+            className="btn"
+            onClick={handleFinish}>
+            Finalizar compra
+          </button>
         </Container>
       )}
     </Container>

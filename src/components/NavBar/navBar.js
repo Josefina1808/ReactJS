@@ -12,14 +12,14 @@ export const NavBar = () => {
     <div>
       <Navbar bg="light" expand="lg" className="navbar-bg">
         <Container >
-          <Link to="/home">
+          <Link to="/">
             {" "}
             <img className="logo-nav" src={Logo} alt="logo de la marca" />{" "}
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="justify-content-end">
-              <Link to="/home">Inicio</Link>
+              <Link to="/">Inicio</Link>
               <Link to="/productos">Productos</Link>
               <Link to="/contacto">Contacto</Link>
             </Nav>

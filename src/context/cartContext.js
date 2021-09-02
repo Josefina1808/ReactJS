@@ -11,11 +11,13 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, counter) => {
     if (!isInCart(item.id)) {
+      item.stock -= counter; 
       setCart([...cart, { item, counter }]);
     } else {
       setCart(cart.map((i) => {
         if (i.item.id === item.id) {
           i.counter = i.counter + counter; 
+          i.item.stock =  i.item.stock - counter; 
         }
         return i
       }))
@@ -70,9 +72,23 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-/* DUDAS
-- Debería quitar "agregar al carrito" de ItemCount? y solo dejar que la forma para agregar al carrito sea clickeando el "+"
-- Cómo imprimo los objetos del array cart en el Cart.js?
-- No pude hacer la lógica que impide el duplicado de productos
-- Y tampoco sé si el removeItem va a funcionar
+
+
+/* OTRA FORMA DE HACER addItem más optimizada
+const addItem = (item, counter) => {
+       
+        const isInCart = cart.find(cart => cart.item.id === item.id);
+        if (isInCart){
+            const newQ = isInCart.counter + counter;
+            const newCart = cart.filter(cart => cart.item.id !== item.id);
+
+            setCart([
+                ...newCart, {item, counter:newQ}
+            ])
+        }else{
+            setCart([
+                ...cart, {item, counter}
+            ])
+        };
+    };
 */
