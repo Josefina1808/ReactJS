@@ -7,11 +7,10 @@ import { CartContext } from "../../../context/cartContext";
 
 export const Cart = () => {
   const { cart } = useContext(CartContext);
-  /* Ahora debemos leer la lista para imprimir en el item */
   console.log("cart", cart);
   const { removeItem, clearCart, getSubtotal, getTotal, itemQuantity} = useContext(CartContext);
 
-  const handleFinish = () => {
+  /* const handleFinish = () => {
     const newOrder = {
       buyer: {
         name: "Josefina",
@@ -22,7 +21,7 @@ export const Cart = () => {
         id, title, price,
       })), 
     };
-  };
+  }; */
 
   return (
     <Container>
@@ -30,7 +29,7 @@ export const Cart = () => {
       {cart.length === 0 && (
         <h3>
           Su carrito está vacio. Visite nuestros{" "}
-          <Link to="productos">productos</Link>{" "}
+          <Link to="productos/all">productos</Link>{" "}
         </h3>
       )}
       {cart.length !== 0 && (
@@ -83,7 +82,7 @@ export const Cart = () => {
           </div>
           <button
             className="btn"
-            onClick={handleFinish}>
+           /*  onClick={handleFinish} */>
             Finalizar compra
           </button>
         </Container>

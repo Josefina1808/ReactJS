@@ -17,7 +17,7 @@ export const Router = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contacto" component={Contacto} />
-            <Route exact path="/productos" component={ItemListContainer} />
+            <Route path="/productos/:category" component={ItemListContainer} />
             <Route exact path="/item/:id" component={ItemDetailContainer} />
             <Route exact path="/cart" component={Cart} />
           </Switch>
@@ -26,3 +26,5 @@ export const Router = () => {
     </div>
   );
 };
+
+{/* <Route exact path="/productos" component={ItemListContainer} /> */}

@@ -8,34 +8,31 @@ import { getFirestore } from "../../firebase/index";
 export const ItemDetailContainer = () => {
   const [state, setState] = useState([]);
   const { id } = useParams();
-
-  /* const q = query(collection(getFirestore, "products"), where("id", "==", id)); */
+  console.log(id)
   useEffect(() => {
-    getFirestore()
-      .collection("products")
-      .where("id", "==", Number(id))
-      .get()
-      .then((data) => {
-        const product = data.docs.map((doc) => doc.data());
-        setState(product);
-      });
-  }, [id]);
-
-  console.log(state);
+    const db = getFirestore();
+        db.collection('products').doc(id)
+        .get()
+        .then(res => {
+          setState({id:res.id, ...res.data()})
+        })
+      }, [id]);
+      
+      console.log(state);
   return (
     <div>
-      {state.length && (
+      {state && (
         <ItemDetail
-          /* state={state.find((product) => Number(id) === product.id)} */
-          state={state[0]}
+        state={state}
         />
-      )}
-      {/* {state.length > 0 ? <ItemDetail state={state.find((product) => id === product.id)}/>
-      : <p>Cargando...</p>} */}
+        )}
     </div>
   );
 };
 
+/* state={state.find((product) => (id) === product.id)} */
+/* {state.length > 0 ? <ItemDetail state={state.find((product) => id === product.id)}/>
+: <p>Cargando...</p>} */
 /* PROMESA sin Firebase
 const getItem = new Promise((resolve, reject) => {
   setTimeout(() => {

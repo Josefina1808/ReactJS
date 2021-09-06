@@ -1,33 +1,47 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import { Container } from "react-bootstrap";
 import { ItemList } from "./ItemList";
 import { getFirestore } from "../../firebase/index";
-import { collection, getDocs } from "firebase/firestore";
 // import products from "./products/products" //"Base de datos de productos"
 import "./main.css";
+import { product } from "prelude-ls";
 
 export const ItemListContainer = () => {
   const [state, setState] = useState([]); // --> tu estado debe empezar como un array
+  const { category } = useParams();
 
   useEffect(() => {
+    let arr = [];
     getFirestore()
       .collection("products")
       .get()
-      .then((data) => {
-        const products = data.docs.map((doc) => doc.data());
-        setState(products);
+      .then((doc) => {
+        doc.docs.map((item) => arr.push({ id: item.id, ...item.data() }));
+        if (category !== "all") {
+          setState(arr.filter((item) => item.categoryName === category));
+        } else {
+          setState(arr);
+        }
       });
-  }, []);
-  
+    console.log(arr);
+  }, [category]);
+  console.log(state[0]);
   return (
     <div>
       <Container>
-        <ItemList state={state} />
+        {state.length > 0 ? <ItemList state={state} /> : <p>Cargando...</p>}
       </Container>
     </div>
   );
 };
 
+/* let products = data.docs.map((doc) => {
+  let id = doc.id;
+  let item = doc.data();
+  return {id, ...item}
+});
+setState(products) */
 /* PROMISE SIN FIREBASE
 const task = new Promise((resolve, reject) => {
     setTimeout(() => {

@@ -37,6 +37,10 @@
 .logo-nav {
     height: 4.5rem;
 }
+.nav-link {
+  padding: 0;
+  color: #012e67;
+}
 
 @media (min-width: 992px) {
     .navbar-expand-lg .navbar-collapse {
