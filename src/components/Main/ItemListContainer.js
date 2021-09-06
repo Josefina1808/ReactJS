@@ -3,9 +3,7 @@ import { useParams } from "react-router";
 import { Container } from "react-bootstrap";
 import { ItemList } from "./ItemList";
 import { getFirestore } from "../../firebase/index";
-// import products from "./products/products" //"Base de datos de productos"
 import "./main.css";
-import { product } from "prelude-ls";
 
 export const ItemListContainer = () => {
   const [state, setState] = useState([]); // --> tu estado debe empezar como un array
@@ -24,9 +22,9 @@ export const ItemListContainer = () => {
           setState(arr);
         }
       });
-    console.log(arr);
+    
   }, [category]);
-  console.log(state[0]);
+
   return (
     <div>
       <Container>

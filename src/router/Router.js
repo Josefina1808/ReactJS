@@ -7,6 +7,7 @@ import { Cart } from "../components/Main/Cart/Cart";
 import { ItemListContainer } from "../components/Main/ItemListContainer";
 import { ItemDetailContainer } from "../components/Main/ItemDetailContainer";
 import { CartProvider } from "../context/cartContext";
+import { OrderForm } from "../components/Main/Order/Order";
 
 export const Router = () => {
   return (
@@ -20,6 +21,7 @@ export const Router = () => {
             <Route path="/productos/:category" component={ItemListContainer} />
             <Route exact path="/item/:id" component={ItemDetailContainer} />
             <Route exact path="/cart" component={Cart} />
+            <Route exact path="/checkout" component={OrderForm} />
           </Switch>
         </CartProvider>
       </BrowserRouter>
@@ -27,4 +29,4 @@ export const Router = () => {
   );
 };
 
-{/* <Route exact path="/productos" component={ItemListContainer} /> */}
+/* <Route exact path="/productos" component={ItemListContainer} /> */

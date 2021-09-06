@@ -8,7 +8,7 @@ import {CartContext} from "../../context/cartContext"
 
 export const ItemDetail = ({ state }) => {
   const { cart } = useContext(CartContext)
-  console.log(state)
+  
   return (
     <Container className="card__detail" id={state.id}>
       <div className="card__detail--img">

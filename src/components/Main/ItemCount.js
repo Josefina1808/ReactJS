@@ -5,7 +5,6 @@ import {CartContext} from "../../context/cartContext"
 
 export const ItemCount = ({ item }) => {
   const { addItem } = useContext(CartContext);
-  const { cart } = useContext(CartContext);
   const [counter, setCounter] = useState(1);
   
   const onAdd = () => {

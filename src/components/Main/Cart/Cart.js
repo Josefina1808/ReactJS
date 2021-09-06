@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
 import "./Cart.css";
 import { ItemCount } from "../ItemCount";
@@ -7,8 +7,9 @@ import { CartContext } from "../../../context/cartContext";
 
 export const Cart = () => {
   const { cart } = useContext(CartContext);
-  console.log("cart", cart);
-  const { removeItem, clearCart, getSubtotal, getTotal, itemQuantity} = useContext(CartContext);
+  
+  const { removeItem, clearCart, getSubtotal, getTotal} =
+    useContext(CartContext);
 
   /* const handleFinish = () => {
     const newOrder = {
@@ -72,19 +73,13 @@ export const Cart = () => {
         ))}
       {cart.length !== 0 && (
         <Container className="cart__footer">
-          <button
-            className="btn"
-            onClick={clearCart}>
+          <button className="btn" onClick={clearCart}>
             Vaciar carrito
           </button>
-          <div>
-            Total ${getTotal()}
-          </div>
-          <button
-            className="btn"
-           /*  onClick={handleFinish} */>
+          <div>Total ${getTotal()}</div>
+          <Link className="btn" to="/checkout">
             Finalizar compra
-          </button>
+          </Link>
         </Container>
       )}
     </Container>

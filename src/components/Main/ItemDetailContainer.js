@@ -8,7 +8,7 @@ import { getFirestore } from "../../firebase/index";
 export const ItemDetailContainer = () => {
   const [state, setState] = useState([]);
   const { id } = useParams();
-  console.log(id)
+  
   useEffect(() => {
     const db = getFirestore();
         db.collection('products').doc(id)
@@ -18,7 +18,6 @@ export const ItemDetailContainer = () => {
         })
       }, [id]);
       
-      console.log(state);
   return (
     <div>
       {state && (
