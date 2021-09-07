@@ -1,20 +1,19 @@
 import Swal from "sweetalert2";
 
-export const confirmationAlert = () => {
+export const confirmationAlert = (text) => {
     Swal.fire({
-      position: "top-end",
+      position: "center",
       icon: "success",
-      title: "Producto añadido al carrito",
-      showConfirmButton: false,
-      timer: 1400,
+      title: text,
+      showConfirmButton: true,
     });
   };
   
-export const declainAlert = () => {
+export const declainAlert = (text) => {
     Swal.fire({
       position: "top-end",
       icon: "error",
-      title: "Error",
+      title: text,
       showConfirmButton: false,
       timer: 1400,
     });

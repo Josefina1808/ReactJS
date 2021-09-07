@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { getFirestore } from "../../../firebase/index";
 import { CartContext } from "../../../context/cartContext";
 import { Container, Form, Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { confirmationAlert } from "../../../helpers/Alerts";
 
 export const OrderForm = () => {
   const { cart } = useContext(CartContext);
-  const { getSubtotal, getTotal } = useContext(CartContext);
+  const { getSubtotal, getTotal, clearCart } = useContext(CartContext);
 
   const formik = useFormik({
     initialValues: {
@@ -22,13 +24,44 @@ export const OrderForm = () => {
       email: Yup.string()
         .email("No es un email válido")
         .required()
-        .oneOf([Yup.ref("repeat_email")], "Los emails ingresados no son iguales"),
-      repeat_email: Yup.string().email().required().oneOf([Yup.ref("email")], "Los emails ingresados no son iguales"),
+        .oneOf(
+          [Yup.ref("repeat_email")],
+          "Los emails ingresados no son iguales"
+        ),
+      repeat_email: Yup.string()
+        .email()
+        .required()
+        .oneOf([Yup.ref("email")], "Los emails ingresados no son iguales"),
       phone: Yup.string().required(),
     }),
 
     onSubmit: (formData) => {
-      console.log(formData);
+      console.log(formData)
+      const newOrder = {
+        buyer: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+        },
+        items: cart.map(({ item, counter }) => ({
+          id: item.id,
+          title: item.title,
+          price: item.price,
+          quantity: counter,
+        })),
+        total: getTotal(),
+      };
+      /* Alert de confirmación */
+      confirmationAlert(
+        "Tu orden de compra fue enviada exitosamente. Nos pondremos en contacto para coordinar el pago y la entrega"
+      );
+      /* Se vacía el form y el carrito, para evitar que el usuario envíe dos veces la misma orden */
+      formik.handleReset();
+      clearCart();
+      /* Envío de orden a Firebase */
+      const db = getFirestore();
+      const orders = db.collection("orders");
+      orders.add(newOrder).then((response) => console.log(response));
     },
   });
 
@@ -129,7 +162,9 @@ export const OrderForm = () => {
         </Form.Group>
 
         <Button type="submit">Enviar</Button>
-        <Button type="buttom" onClick={formik.handleReset}>Vaciar formulario</Button>
+        <Button type="buttom" onClick={formik.handleReset}>
+          Vaciar formulario
+        </Button>
       </Form>
     </Container>
   );

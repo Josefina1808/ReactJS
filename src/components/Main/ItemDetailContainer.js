@@ -3,7 +3,7 @@ import { ItemDetail } from "./ItemDetail";
 import { useParams } from "react-router-dom";
 import "./main.css";
 import { getFirestore } from "../../firebase/index";
-//import products from "./products/products";
+
 
 export const ItemDetailContainer = () => {
   const [state, setState] = useState([]);
