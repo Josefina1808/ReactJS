@@ -36,9 +36,9 @@ export const Home = () => {
                 frecuencia 432 hz, es la nueva frecuencia de la tierra, o bien
                 frecuencias de Solfeggio. Puedes ver nuestras playlists
                 recomendadas en la{" "}
-                <a href="html/galeria.html" target="_blank" rel="noreferrer">
+                <strong>
                   galería musical
-                </a>
+                </strong>
                 . Deja las botellas expuestas al sol por al menos 3 horas, no
                 hay máximo de tiempo, puedes dejarlas durante la noche si lo
                 deseas. Una vez que las retiras del sol, esa vibración se

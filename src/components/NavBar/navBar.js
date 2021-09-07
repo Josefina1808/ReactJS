@@ -24,18 +24,14 @@ export const NavBar = () => {
                 <Link to="/productos/all" >Todos</Link>
                 <NavDropdown.Divider />
                 <Link to="/productos/botellas">Botellas</Link>
-                <NavDropdown.Divider />
                 <Link to="/productos/posadores">Posadores</Link>
-                <NavDropdown.Divider />
                 <Link to="/productos/vajilla">Vajilla</Link>
-                <NavDropdown.Divider />
                 <Link to="/productos/pulseras">Accesorios</Link>
-                <NavDropdown.Divider />
                 <Link to="/productos/aguas">Agua</Link>
               </NavDropdown>
               <Link to="/contacto">Contacto</Link>
             </Nav>
-            {cart.length !== 0 && <CartWidget />}
+            <CartWidget />
           </Navbar.Collapse>
         </Container>
       </Navbar>

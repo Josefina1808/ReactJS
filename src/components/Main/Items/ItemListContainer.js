@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { Container } from "react-bootstrap";
 import { ItemList } from "./ItemList";
-import { getFirestore } from "../../firebase/index";
-import "./main.css";
+import { getFirestore } from "../../../firebase/index";
+import "../main.css";
 
 export const ItemListContainer = () => {
-  const [state, setState] = useState([]); // --> tu estado debe empezar como un array
+  const [state, setState] = useState([]);
   const { category } = useParams();
 
   useEffect(() => {
@@ -40,6 +40,7 @@ export const ItemListContainer = () => {
   return {id, ...item}
 });
 setState(products) */
+
 /* PROMISE SIN FIREBASE
 const task = new Promise((resolve, reject) => {
     setTimeout(() => {

@@ -1,9 +1,9 @@
-import "./main.css";
 import React, {useContext} from "react";
-import { ItemCount } from "./ItemCount";
-import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {CartContext} from "../../context/cartContext"
+import { Container } from "react-bootstrap";
+import {CartContext} from "../../../context/cartContext"
+import { ItemCount } from "./ItemCount";
+import "../main.css";
 
 
 export const ItemDetail = ({ state }) => {
@@ -26,7 +26,7 @@ export const ItemDetail = ({ state }) => {
         </div>
         {cart.length > 0 && 
           <Link className="card__detail--btn_finish" to="/cart">
-            Finalizar compra
+            Ir al carrito
           </Link>
         }
       </div>

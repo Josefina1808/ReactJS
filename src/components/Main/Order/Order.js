@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getFirestore } from "../../../firebase/index";
 import { CartContext } from "../../../context/cartContext";
@@ -10,7 +10,9 @@ import { confirmationAlert } from "../../../helpers/Alerts";
 export const OrderForm = () => {
   const { cart } = useContext(CartContext);
   const { getSubtotal, getTotal, clearCart } = useContext(CartContext);
+  const [orderID, setOrderID] = useState("");
 
+  /* Todo el control y validación del formulario está desarrollada dentro de la constante Formik */
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -36,7 +38,6 @@ export const OrderForm = () => {
     }),
 
     onSubmit: (formData) => {
-      console.log(formData)
       const newOrder = {
         buyer: {
           name: formData.name,
@@ -51,34 +52,45 @@ export const OrderForm = () => {
         })),
         total: getTotal(),
       };
-      /* Alert de confirmación */
-      confirmationAlert(
-        "Tu orden de compra fue enviada exitosamente. Nos pondremos en contacto para coordinar el pago y la entrega"
-      );
-      /* Se vacía el form y el carrito, para evitar que el usuario envíe dos veces la misma orden */
-      formik.handleReset();
-      clearCart();
+
       /* Envío de orden a Firebase */
       const db = getFirestore();
       const orders = db.collection("orders");
-      orders.add(newOrder).then((response) => console.log(response));
+      orders.add(newOrder).then((response) => setOrderID(response.id));
+
+      /* Se vacía carrito para evitar que el usuario envíe dos veces la misma orden */
+      clearCart();
+
+      /* Alert de confirmación */
+      confirmationAlert(
+        "Orden de compra exitosa",
+        `Nos pondremos en contacto para coordinar el pago y la entrega.`
+      );
     },
   });
 
   return (
     <Container className="main">
       <h1>Orden de compra</h1>
+
+      {/* Esto se ejecuta cuando se guarda en el estado el ID del order generado por FireBase*/}
+      {orderID !== "" && (
+        <h3>Gracias por tu compra! Tu ID de compra es: {orderID}</h3>
+      )}
+
       <>
-        <h2>Detalle carrito</h2>
         {cart.length !== 0 && (
-          <Container className="cart__header">
-            <div className="cart__header--info">Detalle</div>
-            <div className="cart__header--actions">
-              <div>Cantidad</div>
-              <div>Precio</div>
-              <div>Subtotal</div>
-            </div>
-          </Container>
+          <>
+            <h2>Detalle carrito</h2>
+            <Container className="cart__header">
+              <div className="cart__header--info">Detalle</div>
+              <div className="cart__header--actions">
+                <div>Cantidad</div>
+                <div>Precio</div>
+                <div>Subtotal</div>
+              </div>
+            </Container>
+          </>
         )}
 
         {cart.length !== 0 &&
@@ -103,69 +115,66 @@ export const OrderForm = () => {
         {cart.length !== 0 && (
           <div className="cart__footer">Total ${getTotal()}</div>
         )}
-        {cart.length === 0 && (
-          <h3>
-            Su carrito está vacio. Visite nuestros{" "}
-            <Link to="productos/all">productos</Link>{" "}
-          </h3>
-        )}
       </>
+      {cart.length !== 0 && (
+        <>
+          <h2>Datos comprador</h2>
+          <Form onSubmit={formik.handleSubmit}>
+            <Form.Group className="mb-3">
+              <Form.Label>Nombre y apellido</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingresar nombre y apellido"
+                name="name"
+                onChange={formik.handleChange}
+                error={formik.errors.name}
+                value={formik.values.name}
+              />
+            </Form.Group>
 
-      <h2>Datos comprador</h2>
-      <Form onSubmit={formik.handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Nombre y apellido</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Ingresar nombre y apellido"
-            name="name"
-            onChange={formik.handleChange}
-            error={formik.errors.name}
-            value={formik.values.name}
-          />
-        </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Ingresar email"
+                name="email"
+                onChange={formik.handleChange}
+                error={formik.errors.email}
+                value={formik.values.email}
+              />
+            </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Ingresar email"
-            name="email"
-            onChange={formik.handleChange}
-            error={formik.errors.email}
-            value={formik.values.email}
-          />
-        </Form.Group>
+            <Form.Group>
+              <Form.Label>Reingresar email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Repetir email"
+                name="repeat_email"
+                onChange={formik.handleChange}
+                error={formik.errors.repeat_email}
+                value={formik.values.repeat_email}
+              />
+            </Form.Group>
 
-        <Form.Group>
-          <Form.Label>Reingresar email</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Repetir email"
-            name="repeat_email"
-            onChange={formik.handleChange}
-            error={formik.errors.repeat_email}
-            value={formik.values.repeat_email}
-          />
-        </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control
+                type="tel"
+                placeholder="Ingresar teléfono"
+                name="phone"
+                onChange={formik.handleChange}
+                error={formik.errors.phone}
+                value={formik.values.phone}
+              />
+            </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Teléfono</Form.Label>
-          <Form.Control
-            type="tel"
-            placeholder="Ingresar teléfono"
-            name="phone"
-            onChange={formik.handleChange}
-            error={formik.errors.phone}
-            value={formik.values.phone}
-          />
-        </Form.Group>
-
-        <Button type="submit">Enviar</Button>
-        <Button type="buttom" onClick={formik.handleReset}>
-          Vaciar formulario
-        </Button>
-      </Form>
+            <Button type="submit">Enviar</Button>
+            <Button type="buttom" onClick={formik.handleReset}>
+              Vaciar formulario
+            </Button>
+          </Form>
+        </>
+      )}
     </Container>
   );
 };

@@ -1,28 +1,15 @@
 import React, { useContext } from "react";
-import { Container } from "react-bootstrap";
-import "./Cart.css";
-import { ItemCount } from "../ItemCount";
 import { Link } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import { CartContext } from "../../../context/cartContext";
+import { ItemCount } from "../Items/ItemCount";
+import "./Cart.css";
 
 export const Cart = () => {
   const { cart } = useContext(CartContext);
   
   const { removeItem, clearCart, getSubtotal, getTotal} =
     useContext(CartContext);
-
-  /* const handleFinish = () => {
-    const newOrder = {
-      buyer: {
-        name: "Josefina",
-        phone: "2644148548",
-        email: "josefinaesna@gmail.com",
-      },
-      items: cart.map(({id, title, price}) => ({
-        id, title, price,
-      })), 
-    };
-  }; */
 
   return (
     <Container>
@@ -85,9 +72,3 @@ export const Cart = () => {
     </Container>
   );
 };
-
-/* {cart.length > 0 && (
-  <Link className="card__cart--btn_finish" to="/cart">
-    Finalizar compra
-  </Link>
-)} */

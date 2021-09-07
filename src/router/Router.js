@@ -4,8 +4,8 @@ import { NavBar } from "../components/NavBar/navBar";
 import { Home } from "../components/Main/Home/Home";
 import { Contacto } from "../components/Main/Contacto/Contacto";
 import { Cart } from "../components/Main/Cart/Cart";
-import { ItemListContainer } from "../components/Main/ItemListContainer";
-import { ItemDetailContainer } from "../components/Main/ItemDetailContainer";
+import { ItemListContainer } from "../components/Main/Items/ItemListContainer";
+import { ItemDetailContainer } from "../components/Main/Items/ItemDetailContainer";
 import { CartProvider } from "../context/cartContext";
 import { OrderForm } from "../components/Main/Order/Order";
 

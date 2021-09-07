@@ -5,22 +5,15 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const isInCart = (id) => {
-    return cart.find((item) => item.item.id === id);
-  };
-
   const addItem = (item, counter) => {
-    if (!isInCart(item.id)) {
-     /*  item.stock -= counter;  */
-      setCart([...cart, { item, counter }]);
+    const isInCart = cart.find((cart) => cart.item.id === item.id);
+
+    if (isInCart) {
+      const newQ = isInCart.counter + counter;
+      const newCart = cart.filter((cart) => cart.item.id !== item.id);
+      setCart([...newCart, { item, counter: newQ }]);
     } else {
-      setCart(cart.map((i) => {
-        if (i.item.id === item.id) {
-          i.counter = i.counter + counter; 
-         /*  i.item.stock =  i.item.stock - counter;  */
-        }
-        return i
-      }))
+      setCart([...cart, { item, counter }]);
     }
   };
 
@@ -72,23 +65,19 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-
-
-/* OTRA FORMA DE HACER addItem más optimizada
+/* FORMA NO OPTIMIZADA
 const addItem = (item, counter) => {
-       
-        const isInCart = cart.find(cart => cart.item.id === item.id);
-        if (isInCart){
-            const newQ = isInCart.counter + counter;
-            const newCart = cart.filter(cart => cart.item.id !== item.id);
-
-            setCart([
-                ...newCart, {item, counter:newQ}
-            ])
-        }else{
-            setCart([
-                ...cart, {item, counter}
-            ])
-        };
-    };
+    if (!isInCart(item.id)) {
+      item.stock -= counter; 
+      setCart([...cart, { item, counter }]);
+    } else {
+      setCart(cart.map((i) => {
+        if (i.item.id === item.id) {
+          i.counter = i.counter + counter; 
+          i.item.stock =  i.item.stock - counter; 
+        }
+        return i
+      }))
+    }
+  };
 */

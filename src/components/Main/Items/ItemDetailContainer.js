@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ItemDetail } from "./ItemDetail";
 import { useParams } from "react-router-dom";
-import "./main.css";
-import { getFirestore } from "../../firebase/index";
-
+import { getFirestore } from "../../../firebase/index";
+import { ItemDetail } from "./ItemDetail";
+import "../main.css";
 
 export const ItemDetailContainer = () => {
   const [state, setState] = useState([]);
@@ -32,6 +31,7 @@ export const ItemDetailContainer = () => {
 /* state={state.find((product) => (id) === product.id)} */
 /* {state.length > 0 ? <ItemDetail state={state.find((product) => id === product.id)}/>
 : <p>Cargando...</p>} */
+
 /* PROMESA sin Firebase
 const getItem = new Promise((resolve, reject) => {
   setTimeout(() => {

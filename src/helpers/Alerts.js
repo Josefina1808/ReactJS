@@ -1,10 +1,11 @@
 import Swal from "sweetalert2";
 
-export const confirmationAlert = (text) => {
+export const confirmationAlert = (title, text) => {
     Swal.fire({
       position: "center",
       icon: "success",
-      title: text,
+      title: title,
+      text: text,
       showConfirmButton: true,
     });
   };

@@ -1,5 +1,5 @@
 import React from "react";
-import "./main.css";
+import "../main.css";
 import Item from "./Item"
 
 export const ItemList = (props) => {
