@@ -8,7 +8,7 @@ export const ItemList = (props) => {
     <div className="productos main">
       <>
         {props.state.map((x) => (
-          <Item x={x} />
+          <Item x={x} key={x.id} />
         ))}
       </>
     </div>

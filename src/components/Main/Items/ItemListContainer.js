@@ -27,32 +27,9 @@ export const ItemListContainer = () => {
 
   return (
     <div>
-      <Container>
+      <Container className="main">
         {state.length > 0 ? <ItemList state={state} /> : <p>Cargando...</p>}
       </Container>
     </div>
   );
 };
-
-/* let products = data.docs.map((doc) => {
-  let id = doc.id;
-  let item = doc.data();
-  return {id, ...item}
-});
-setState(products) */
-
-/* PROMISE SIN FIREBASE
-const task = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 200);
-  }); // --> aqui terminas de declarar la promesa
-
-  useEffect(() => {
-    // --> el useEffect recibe una función callback como parámetro
-    task // --> aquí invocas la función
-      .then((result) => {
-        setState(result);
-      });
-  }, []); // --> y los corchetes para que no te genere un loop infinito
-*/

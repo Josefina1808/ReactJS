@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
+import {WishContext} from "../../../context/wishContext"
 import "../main.css";
 import { Link } from "react-router-dom";
 
 function Item({ x }) {
-  
+  const { addItem } = useContext(WishContext)
+
   return (
     <div className="card__product" id={x.id}>
       <div className="card_product--title_principal">
@@ -22,6 +24,7 @@ function Item({ x }) {
           to={`/item/${x.id}`}>
           Ver más
         </Link>
+        <button className="card__product--btn_more btn" onClick={() => addItem(x)}>❤️</button>
       </div>
     </div>
   );

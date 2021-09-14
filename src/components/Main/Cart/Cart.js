@@ -12,7 +12,7 @@ export const Cart = () => {
     useContext(CartContext);
 
   return (
-    <Container>
+    <Container className="main">
       <h1>Carrito</h1>
       {cart.length === 0 && (
         <h3>
@@ -34,7 +34,7 @@ export const Cart = () => {
       )}
       {cart.length !== 0 &&
         cart.map(({ item, counter }) => (
-          <Container className="card__cart" id={item.id}>
+          <Container className="card__cart" id={item.id} key={item.id}>
             <div className="card__cart--info">
               <div className="card__cart--img">
                 <img src={item.image} alt="Foto de producto" />

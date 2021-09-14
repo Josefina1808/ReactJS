@@ -12,13 +12,18 @@
   margin: 0rem 1rem;
 }
 .fas.fa-shopping-cart:hover {
-  color: white;
+  color: #00ccff;
 }
 
 .cartWidget {
   display: flex;
   color: #012e67;
   font-size: 1.2rem;
+}
+
+.alig-right {
+  display: flex;
+  align-items: center;
 }
 
 /* NAVBAR */
@@ -32,7 +37,7 @@
 }
 
 .navbar-nav a:hover {
-  color: white;
+  color: #00ccff;
 }
 
 .logo-nav {
@@ -49,7 +54,7 @@
   }
 }
 
-/* CARROUSEL */
+/* CARROUSEL use it as a static image */
 .carousel-control-prev,
 .carousel-control-next,
 .carousel-indicators {

@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import Logo from "../../img/logo.svg";
 import { CartWidget } from "./CartWidget";
-import { CartContext } from "../../context/cartContext";
+import { WishIcon } from "./WishIcon";
 
 export const NavBar = () => {
-  const { cart } = useContext(CartContext);
+  
   return (
     <div>
       <Navbar bg="light" expand="lg" className="navbar-bg">
@@ -21,7 +21,7 @@ export const NavBar = () => {
             <Nav className="justify-content-end">
               <Link to="/">Inicio</Link>
               <NavDropdown title="Productos" className="dropdown">
-                <Link to="/productos/all" >Todos</Link>
+                <Link to="/productos/all">Todos</Link>
                 <NavDropdown.Divider />
                 <Link to="/productos/botellas">Botellas</Link>
                 <Link to="/productos/posadores">Posadores</Link>
@@ -31,7 +31,10 @@ export const NavBar = () => {
               </NavDropdown>
               <Link to="/contacto">Contacto</Link>
             </Nav>
-            <CartWidget />
+            <div className="alig-right">
+              <WishIcon />
+              <CartWidget />
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
