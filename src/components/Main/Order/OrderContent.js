@@ -26,7 +26,8 @@ const FormValidation = Yup.object().shape({
 export const OrderContent = () => {
   const { cart } = useContext(CartContext);
   const { getSubtotal, getTotal, clearCart } = useContext(CartContext);
-
+  const tiempoTranscurrido = Date.now();
+  const hoy = new Date(tiempoTranscurrido);
   return (
     <div>
       <Formik
@@ -51,6 +52,7 @@ export const OrderContent = () => {
               quantity: counter,
             })),
             total: getTotal(),
+            date: hoy.toLocaleDateString(),
           };
 
           /* Envío de orden a Firebase */
@@ -164,7 +166,7 @@ export const OrderContent = () => {
                   </div>
                   <div className="form-buttons">
                     <button type="submit" className="btn">
-                      Submit
+                      Realizar compra
                     </button>
                     <button type="reset" className="btn">
                       Vaciar formulario

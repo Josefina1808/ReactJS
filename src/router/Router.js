@@ -10,6 +10,7 @@ import { ItemDetailContainer } from "../components/Main/Items/ItemDetailContaine
 import { CartProvider } from "../context/cartContext";
 import { WishProvider } from "../context/wishContext";
 import { OrderForm } from "../components/Main/Order/Order";
+import { NoMatch } from "../components/NoMatch/NoMatch";
 
 export const Router = () => {
   return (
@@ -29,6 +30,9 @@ export const Router = () => {
               <Route exact path="/wishlist" component={WishList} />
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/checkout" component={OrderForm} />
+              <Route path="*" componente={NoMatch}>
+            <NoMatch />
+          </Route>
             </Switch>
           </WishProvider>
         </CartProvider>
